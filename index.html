@@ -1,279 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bidur Devkota - Curriculum Vitae</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #f5f6f5;
-      color: #222;
-      line-height: 1.5;
-    }
-    .cv-container {
-      max-width: 1100px;
-      margin: 30px auto;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      min-height: 100vh;
-    }
-    .sidebar {
-      background: #2c3e50;
-      color: white;
-      padding: 40px 30px;
-    }
-    .main {
-      padding: 40px 35px;
-    }
-    h1 {
-      font-size: 2.1rem;
-      margin-bottom: 8px;
-    }
-    .title {
-      font-size: 1.15rem;
-      opacity: 0.9;
-      margin-bottom: 25px;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
-    .section-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-    }
-    .sidebar .section-title {
-      color: #ecf0f1;
-      border-bottom-color: #3498db;
-    }
-    .contact-item {
-      margin: 14px 0;
-      font-size: 0.98rem;
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-    .contact-item i {
-      width: 26px;
-      margin-right: 12px;
-      opacity: 0.9;
-    }
-    .skills-list {
-      list-style: none;
-      padding: 0;
-    }
-    .skills-list li {
-      margin: 10px 0;
-      font-size: 0.97rem;
-    }
-    .skills-list li:before {
-      content: "• ";
-      color: #3498db;
-      margin-right: 8px;
-    }
-    .entry {
-      margin-bottom: 22px;
-    }
-    .entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .entry-title {
-      font-weight: 700;
-      font-size: 1.08rem;
-    }
-    .entry-date {
-      font-weight: 500;
-      color: #555;
-      white-space: nowrap;
-    }
-    .entry-place {
-      font-style: italic;
-      color: #444;
-      display: block;
-      margin: 4px 0 8px;
-    }
-    ul.bullet-list {
-      padding-left: 20px;
-      margin: 8px 0;
-    }
-    ul.bullet-list li {
-      margin-bottom: 6px;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bidur Devkota - CV</title>
 
-    @media (max-width: 900px) {
-      .cv-container {
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        padding: 30px 25px;
-      }
-      .main {
-        padding: 30px 25px;
-      }
-    }
-  </style>
+<style>
+body { margin:0; font-family:Arial; }
+.container { display:flex; }
+
+/* Sidebar */
+.sidebar {
+    width:28%;
+    background:#2c3e50;
+    color:white;
+    padding:30px;
+    position:fixed;
+    height:100%;
+}
+
+.profile-pic {
+    width:120px;
+    height:150px;
+    background:#ccc;
+    margin-bottom:15px;
+    border-radius:5px;
+    /* Replace below */
+    /* background-image:url('photo.jpg'); background-size:cover; */
+}
+
+/* Content */
+.content {
+    margin-left:28%;
+    padding:30px;
+    width:72%;
+}
+
+.section { margin-bottom:25px; }
+.section h2 {
+    border-bottom:2px solid #3498db;
+}
+
+/* Links */
+a { color:#1abc9c; text-decoration:none; }
+</style>
 </head>
+
 <body>
 
-<div class="cv-container">
+<div class="container">
 
-  <!-- Left Sidebar -->
-  <div class="sidebar">
-    <h1>Bidur Devkota</h1>
-    <div class="title">Assistant Professor</div>
+<!-- LEFT -->
+<div class="sidebar">
 
-    <div class="section">
-      <div class="section-title">Contact</div>
-      <div class="contact-item"><i class="fas fa-envelope"></i> im.bidur@gmail.com</div>
-      <div class="contact-item"><i class="fas fa-phone"></i> +977 9856066658</div>
-      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Pokhara, Nepal</div>
-    </div>
+<div class="profile-pic"></div>
 
-    <div class="section">
-      <div class="section-title">Links</div>
-      <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/bidur" style="color:#ecf0f1;">GitHub</a></div>
-      <div class="contact-item"><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=SG4jtHQAAAAJ" style="color:#ecf0f1;">Google Scholar</a></div>
-    </div>
+<h1>Bidur Devkota</h1>
+<p>Assistant Professor</p>
 
-    <div class="section">
-      <div class="section-title">Skills</div>
-      <ul class="skills-list">
-        <li>Python, R, Java</li>
-        <li>Machine Learning</li>
-        <li>GIS & Remote Sensing</li>
-        <li>QGIS, ArcGIS, Google Earth Engine</li>
-        <li>Data Science</li>
-      </ul>
-    </div>
-  </div>
+<hr>
 
-  <!-- Right Main Content -->
-  <div class="main">
+<p><b>Email:</b> <span id="email"></span></p>
+<p><b>Phone:</b> <span id="phone"></span></p>
 
-    <div class="section">
-      <div class="section-title">Profile</div>
-      <p>Doctor of Engineering specializing in GIS, Machine Learning, and Tourism Analytics. Experienced academic and researcher in AI, geospatial data, and social media mining.</p>
-    </div>
+<hr>
 
-    <div class="section">
-      <div class="section-title">Education</div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Doctor of Engineering (ICT)</span>
-          <span class="entry-date">2016 – 2020</span>
-        </div>
-        <span class="entry-place">Asian Institute of Technology, Thailand</span>
-      </div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Master of Engineering (ICT)</span>
-          <span class="entry-date">2010 – 2012</span>
-        </div>
-        <span class="entry-place">Asian Institute of Technology, Thailand</span>
-      </div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Bachelor of Engineering</span>
-          <span class="entry-date">2002 – 2006</span>
-        </div>
-        <span class="entry-place">Pokhara University, Nepal</span>
-      </div>
-    </div>
+<p><b>Links</b></p>
+<p><a href="https://github.com/bidur">GitHub</a></p>
+<p><a href="https://scholar.google.com/citations?user=SG4jtHQAAAAJ">Google Scholar</a></p>
+<p><a href="https://www.researchgate.net/profile/Bidur-Devkota">ResearchGate</a></p>
 
-    <div class="section">
-      <div class="section-title">Experience</div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Assistant Professor & Masters Coordinator</span>
-          <span class="entry-date">2022 – Present</span>
-        </div>
-        <span class="entry-place">Gandaki College of Engineering and Science (GCES), Pokhara University</span>
-      </div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">CEO</span>
-          <span class="entry-date">2021 – Present</span>
-        </div>
-        <span class="entry-place">Butea Tech Solutions Pvt. Ltd.</span>
-      </div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Assistant Professor</span>
-          <span class="entry-date">2021 – 2023</span>
-        </div>
-        <span class="entry-place">Pashchimanchal Campus, Tribhuvan University</span>
-      </div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Project Assistant</span>
-          <span class="entry-date">2021 – 2022</span>
-        </div>
-        <span class="entry-place">GLODAL Inc., Japan</span>
-      </div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Assistant Professor</span>
-          <span class="entry-date">2021</span>
-        </div>
-        <span class="entry-place">Gandaki University</span>
-      </div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Freelancer</span>
-          <span class="entry-date">2020</span>
-        </div>
-        <span class="entry-place">University of Tokyo</span>
-      </div>
-    </div>
+<hr>
 
-    <div class="section">
-      <div class="section-title">Research & Publications</div>
-      <ul class="bullet-list">
-        <li>PM<sub>2.5</sub> estimation using ML and satellite data (IEEE)</li>
-        <li>Tourism area identification using remote sensing & social media</li>
-        <li>Social media mining for tourism analytics</li>
-        <li>Adversarial patches for segmentation (arXiv)</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Internship</div>
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">National Institute of Advanced Industrial Science & Technology (AIST)</span>
-          <span class="entry-date">2018</span>
-        </div>
-        <span class="entry-place">Japan — Machine Learning, Text Mining, Social Media Mining</span>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Awards</div>
-      <ul class="bullet-list">
-        <li>NAAMII AI Fellowship (2019)</li>
-        <!-- Add more from original CV if desired -->
-      </ul>
-    </div>
-
-  </div>
+<p><b>Skills</b></p>
+<ul>
+<li>Python, R, Java</li>
+<li>Machine Learning</li>
+<li>GIS, Remote Sensing</li>
+<li>QGIS, ArcGIS</li>
+</ul>
 
 </div>
+
+<!-- RIGHT -->
+<div class="content">
+
+<div class="section">
+<h2>Education</h2>
+<ul>
+<li>PhD, Asian Institute of Technology (2016–2020)</li>
+<li>MEng, AIT (2010–2012)</li>
+<li>BE, Pokhara University</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Experience</h2>
+<ul>
+<li>Assistant Professor, GCES</li>
+<li>CEO, Butea Tech</li>
+<li>Assistant Professor, TU</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Graduate Students Supervision</h2>
+<ul>
+<li>Glacier Mass Balance Prediction</li>
+<li>PM2.5 Estimation</li>
+<li>Tourism NLP Analysis</li>
+<li>Landslide Prediction</li>
+<li>Deep Learning Healthcare</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Publications</h2>
+<ul>
+<li>PM2.5 Estimation (IEEE)</li>
+<li>Tourism Analysis using ML</li>
+<li>Adversarial Patches (arXiv)</li>
+<li>Social Media Mining</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<!-- Anti-spam JS -->
+<script>
+document.getElementById("email").innerHTML =
+"im." + "bidur" + "@gmail.com";
+
+document.getElementById("phone").innerHTML =
+"+977 " + "985" + "6066658";
+</script>
 
 </body>
 </html>
