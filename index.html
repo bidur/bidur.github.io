@@ -6,17 +6,18 @@
   <title>Bidur Devkota - Curriculum Vitae</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.45;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f5f6f5;
+      color: #222;
+      line-height: 1.5;
     }
-    .container {
+    .cv-container {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 30px auto;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       display: grid;
       grid-template-columns: 300px 1fr;
       min-height: 100vh;
@@ -24,50 +25,68 @@
     .sidebar {
       background: #2c3e50;
       color: white;
-      padding: 2.5rem 1.8rem;
+      padding: 40px 30px;
     }
     .main {
-      background: white;
-      padding: 2.5rem 2rem;
+      padding: 40px 35px;
     }
     h1 {
-      margin: 0 0 0.4rem;
       font-size: 2.1rem;
-      letter-spacing: 0.5px;
+      margin-bottom: 8px;
     }
-    .subtitle {
-      font-size: 1.1rem;
+    .title {
+      font-size: 1.15rem;
       opacity: 0.9;
-      margin-bottom: 1.8rem;
+      margin-bottom: 25px;
     }
-    .contact-item {
-      margin: 0.9rem 0;
-      font-size: 0.95rem;
-    }
-    .contact-item i {
-      width: 24px;
-      margin-right: 10px;
-      opacity: 0.9;
+    .section {
+      margin-bottom: 30px;
     }
     .section-title {
-      font-size: 1.35rem;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 0.35rem;
-      margin: 2.2rem 0 1.1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
     }
     .sidebar .section-title {
       color: #ecf0f1;
       border-bottom-color: #3498db;
     }
+    .contact-item {
+      margin: 14px 0;
+      font-size: 0.98rem;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .contact-item i {
+      width: 26px;
+      margin-right: 12px;
+      opacity: 0.9;
+    }
+    .skills-list {
+      list-style: none;
+      padding: 0;
+    }
+    .skills-list li {
+      margin: 10px 0;
+      font-size: 0.97rem;
+    }
+    .skills-list li:before {
+      content: "• ";
+      color: #3498db;
+      margin-right: 8px;
+    }
     .entry {
-      margin-bottom: 1.4rem;
+      margin-bottom: 22px;
     }
     .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 0.35rem;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .entry-title {
       font-weight: 700;
@@ -78,208 +97,182 @@
       color: #555;
       white-space: nowrap;
     }
-    .entry-subtitle {
+    .entry-place {
       font-style: italic;
       color: #444;
-      margin: 0.15rem 0 0.4rem;
+      display: block;
+      margin: 4px 0 8px;
     }
-    ul {
-      padding-left: 1.3rem;
-      margin: 0.5rem 0;
+    ul.bullet-list {
+      padding-left: 20px;
+      margin: 8px 0;
     }
-    li {
-      margin-bottom: 0.45rem;
-    }
-    .skills-list {
-      column-count: 2;
-      column-gap: 1.8rem;
-      list-style: none;
-      padding-left: 0;
-    }
-    .skills-list li {
-      margin-bottom: 0.5rem;
-      break-inside: avoid;
-    }
-    .skills-list li:before {
-      content: "• ";
-      color: #3498db;
-    }
-    .publications li {
-      margin-bottom: 1rem;
+    ul.bullet-list li {
+      margin-bottom: 6px;
     }
     a {
       color: #3498db;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 850px) {
-      .container {
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .cv-container {
         grid-template-columns: 1fr;
       }
       .sidebar {
-        padding-top: 1.5rem;
+        padding: 30px 25px;
+      }
+      .main {
+        padding: 30px 25px;
       }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+<div class="cv-container">
+
   <!-- Left Sidebar -->
   <div class="sidebar">
     <h1>Bidur Devkota</h1>
-    <div class="subtitle">PhD in Information and Communication Technologies</div>
+    <div class="title">Assistant Professor</div>
 
-    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Nityananda Marga, Pokhara-16, 33700<br>Gandaki Province, Nepal</div>
-    <div class="contact-item"><i class="fas fa-envelope"></i> im.bidur@gmail.com</div>
-    <div class="contact-item"><i class="fas fa-phone"></i> +977 9856066658</div>
-    <div class="contact-item"><i class="fas fa-flag"></i> Nepalese Citizenship</div>
-    <div class="contact-item"><i class="fas fa-venus-mars"></i> Male</div>
+    <div class="section">
+      <div class="section-title">Contact</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> im.bidur@gmail.com</div>
+      <div class="contact-item"><i class="fas fa-phone"></i> +977 9856066658</div>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Pokhara, Nepal</div>
+    </div>
 
-    <div class="section-title">Expertise</div>
-    <ul class="skills-list">
-      <li>Python, R, C, Java</li>
-      <li>Google Earth Engine</li>
-      <li>WebGIS</li>
-      <li>Machine Learning & Data Science</li>
-      <li>ArcGIS, QGIS, GDAL</li>
-      <li>RStudio, Tableau, JupyterLab</li>
-      <li>LaTeX</li>
-      <li>Mac, Linux, Windows</li>
-    </ul>
+    <div class="section">
+      <div class="section-title">Links</div>
+      <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/bidur" style="color:#ecf0f1;">GitHub</a></div>
+      <div class="contact-item"><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=SG4jtHQAAAAJ" style="color:#ecf0f1;">Google Scholar</a></div>
+    </div>
 
-    <div class="section-title">Links</div>
-    <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/bidur" style="color:#ecf0f1;">github.com/bidur</a></div>
-    <div class="contact-item"><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=SG4jtHQAAAAJ" style="color:#ecf0f1;">Google Scholar</a></div>
-
-    <div class="section-title">Awards</div>
-    <ul>
-      <li>Japanese Government Scholarship – PhD (2016–2020)</li>
-      <li>Asian Institute of Technology Fellowship – Master’s (2010)</li>
-      <li>Best Paper Award – NaSCoIT Conference 2013</li>
-      <li>Fellowship – Second Nepal Winter School in AI (2019)</li>
-      <li>Financial support – BeiDou Technology Workshop (2019)</li>
-      <li>Financial support – IEEE BigComp 2019</li>
-      <li>Semester topper awards – Gandaki College of Engineering and Science</li>
-      <li>First Prize – Secondary Level Science Exhibition, PABSON</li>
-    </ul>
+    <div class="section">
+      <div class="section-title">Skills</div>
+      <ul class="skills-list">
+        <li>Python, R, Java</li>
+        <li>Machine Learning</li>
+        <li>GIS & Remote Sensing</li>
+        <li>QGIS, ArcGIS, Google Earth Engine</li>
+        <li>Data Science</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Main Content -->
+  <!-- Right Main Content -->
   <div class="main">
-    <div class="section-title">Education</div>
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Doctor of Engineering – Information and Communication Technologies</span>
-        <span class="entry-date">Aug 2016 – Jul 2020</span>
-      </div>
-      <div class="entry-subtitle">Asian Institute of Technology, Thailand</div>
-      <p>Research: A Study on Tourism Monitoring using Social Media and Nighttime Light Remote Sensing Data (Nepal focus). Used crowdsourced data (Twitter, Flickr, OSM), remote sensing, DBSCAN, TF-IDF, Python, QGIS.</p>
+
+    <div class="section">
+      <div class="section-title">Profile</div>
+      <p>Doctor of Engineering specializing in GIS, Machine Learning, and Tourism Analytics. Experienced academic and researcher in AI, geospatial data, and social media mining.</p>
     </div>
 
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Master of Engineering – Information and Communication Technologies</span>
-        <span class="entry-date">Aug 2010 – Jun 2012</span>
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Doctor of Engineering (ICT)</span>
+          <span class="entry-date">2016 – 2020</span>
+        </div>
+        <span class="entry-place">Asian Institute of Technology, Thailand</span>
       </div>
-      <div class="entry-subtitle">Asian Institute of Technology, Thailand</div>
-      <p>Thesis: Directed Accident Information Dissemination in Vehicular Ad-hoc Network</p>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Master of Engineering (ICT)</span>
+          <span class="entry-date">2010 – 2012</span>
+        </div>
+        <span class="entry-place">Asian Institute of Technology, Thailand</span>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Bachelor of Engineering</span>
+          <span class="entry-date">2002 – 2006</span>
+        </div>
+        <span class="entry-place">Pokhara University, Nepal</span>
+      </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Bachelor of Engineering – Computer Software Engineering</span>
-        <span class="entry-date">Aug 2002 – Sep 2006</span>
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Assistant Professor & Masters Coordinator</span>
+          <span class="entry-date">2022 – Present</span>
+        </div>
+        <span class="entry-place">Gandaki College of Engineering and Science (GCES), Pokhara University</span>
       </div>
-      <div class="entry-subtitle">Gandaki College of Engineering and Science, Pokhara University, Nepal</div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">CEO</span>
+          <span class="entry-date">2021 – Present</span>
+        </div>
+        <span class="entry-place">Butea Tech Solutions Pvt. Ltd.</span>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Assistant Professor</span>
+          <span class="entry-date">2021 – 2023</span>
+        </div>
+        <span class="entry-place">Pashchimanchal Campus, Tribhuvan University</span>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Project Assistant</span>
+          <span class="entry-date">2021 – 2022</span>
+        </div>
+        <span class="entry-place">GLODAL Inc., Japan</span>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Assistant Professor</span>
+          <span class="entry-date">2021</span>
+        </div>
+        <span class="entry-place">Gandaki University</span>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Freelancer</span>
+          <span class="entry-date">2020</span>
+        </div>
+        <span class="entry-place">University of Tokyo</span>
+      </div>
     </div>
 
-    <div class="section-title">Professional Experience</div>
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Assistant Professor & Masters Program Coordinator</span>
-        <span class="entry-date">Jun 2022 – Present</span>
-      </div>
-      <div class="entry-subtitle">Gandaki College of Engineering and Science, Pokhara University, Nepal</div>
-      <ul>
-        <li>Teaching: Programming, GIS, Software Engineering</li>
-        <li>Lab conduction, thesis/project supervision</li>
+    <div class="section">
+      <div class="section-title">Research & Publications</div>
+      <ul class="bullet-list">
+        <li>PM<sub>2.5</sub> estimation using ML and satellite data (IEEE)</li>
+        <li>Tourism area identification using remote sensing & social media</li>
+        <li>Social media mining for tourism analytics</li>
+        <li>Adversarial patches for segmentation (arXiv)</li>
       </ul>
     </div>
 
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">CEO</span>
-        <span class="entry-date">Jul 2021 – Present</span>
+    <div class="section">
+      <div class="section-title">Internship</div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">National Institute of Advanced Industrial Science & Technology (AIST)</span>
+          <span class="entry-date">2018</span>
+        </div>
+        <span class="entry-place">Japan — Machine Learning, Text Mining, Social Media Mining</span>
       </div>
-      <div class="entry-subtitle">Butea Tech Solutions Pvt. Ltd., Pokhara, Nepal</div>
-      <ul>
-        <li>Data Science projects: traffic analysis (Bangkok mobility + nighttime light), Python, QGIS, GDAL</li>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Awards</div>
+      <ul class="bullet-list">
+        <li>NAAMII AI Fellowship (2019)</li>
+        <!-- Add more from original CV if desired -->
       </ul>
     </div>
 
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Assistant Professor</span>
-        <span class="entry-date">Dec 2021 – Apr 2023</span>
-      </div>
-      <div class="entry-subtitle">Pashchimanchal Campus, Tribhuvan University, Nepal</div>
-      <ul>
-        <li>Courses: Programming, Project Management, ML & Data Science for Geomatics</li>
-        <li>Labs, thesis supervision</li>
-      </ul>
-    </div>
-
-    <!-- More experience entries can be added similarly; abbreviated for brevity -->
-    <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">Project Assistant (Part-time)</span>
-        <span class="entry-date">Mar 2021 – Feb 2022</span>
-      </div>
-      <div class="entry-subtitle">GLODAL inc, Japan</div>
-      <ul><li>Social Media Analysis, ML, Geospatial Big Data (Python, QGIS, GDAL)</li></ul>
-    </div>
-
-    <div class="section-title">Graduate Students Supervision</div>
-    <p><strong>Ongoing:</strong></p>
-    <ul>
-      <li>Adhikari, A. – NLP & Clustering for Tourist Destination Attributes (Nepal)</li>
-      <li>Bhandari, U. – Tourism Functional Areas using Social Media</li>
-      <li>Gautam, U. – ML Ensemble for Temporal Landslide Forecasting (Nepal)</li>
-    </ul>
-
-    <p><strong>Completed (selected):</strong></p>
-    <ul>
-      <li>Gurung, S. – Glacier Mass Balance Prediction (Central Himalaya)</li>
-      <li>Thapa, I. – PM<sub>2.5</sub> Estimation using Satellite & Meteorological Data</li>
-      <li>Parajuli, B. – Aspect-Based Sentiment Analysis on Nepali COVID-19 Tweets</li>
-      <li>Subedi, G. – COVID-19 Detection from Chest X-rays (Ensemble DL)</li>
-      <!-- Add more as needed -->
-    </ul>
-
-    <div class="section-title">Selected Publications</div>
-    <ul class="publications">
-      <li>Gurung, S., Devkota, B., et al. (2025). Predicting Mass Balance of Glaciers... <em>Journal of Engineering and Sciences</em>, 4(2), 171-186.</li>
-      <li>Thapa, I., Devkota, B., et al. (2025). Applying Deep Learning... to Estimate PM<sub>2.5</sub>... <em>IEEE JSTARS</em>.</li>
-      <li>Devkota, B., Miyazaki, H. (2023). Social Media Reactions to COVID-19... In <em>Rethinking Cities...</em></li>
-      <li>Devkota, B., Miyazaki, H., et al. (2019). Using volunteered geographic information and nighttime light... <em>Sustainability</em>, 11(17), 4718.</li>
-      <!-- Add remaining publications following the same pattern -->
-    </ul>
-
-    <div class="section-title">Other Activities</div>
-    <ul>
-      <li>Editor: Journal of Engineering and Sciences, Pashchimanchal Campus</li>
-      <li>Reviewer: Springer Nature, NepJOL, MDPI Journals</li>
-      <li>Author: <em>Java Programming Basic</em> (2016, ISBN: 993788818-2)</li>
-    </ul>
-
-    <div class="section-title">References</div>
-    <p><strong>Dr. Hiroyuki Miyazaki</strong><br>Project Assistant Professor, Center for Spatial Information Science, The University of Tokyo<br>(PhD Supervisor)</p>
-    <p><strong>Dr. Kyoung-Sook Kim</strong><br>Deputy Director, Artificial Intelligence Research Center, AIST, Japan</p>
-    <p><strong>Dr. Adrian Boone</strong><br>Director, Sustainable Solutions, New Zealand / Nepal</p>
   </div>
+
 </div>
 
 </body>
