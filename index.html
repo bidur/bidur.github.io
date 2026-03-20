@@ -7,91 +7,121 @@
 
 <style>
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f4f6f8;
-    color: #333;
+    font-family: "Helvetica", sans-serif;
 }
 
-header {
+/* Layout */
+.container {
+    display: flex;
+}
+
+/* LEFT COLUMN */
+.sidebar {
+    width: 28%;
     background: #2c3e50;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 30px;
+    height: 100vh;
+    position: fixed;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+.sidebar h1 {
+    margin-top: 0;
 }
 
+.sidebar a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+/* RIGHT COLUMN */
+.content {
+    margin-left: 28%;
+    padding: 30px;
+    width: 72%;
+}
+
+/* Sections */
 .section {
-    background: white;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
+    margin-bottom: 25px;
 }
 
-h2 {
+.section h2 {
     border-bottom: 2px solid #3498db;
     padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
+/* Lists */
 ul {
     padding-left: 20px;
 }
 
-.contact p {
-    margin: 5px 0;
+li {
+    margin-bottom: 8px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Bidur Devkota</h1>
-    <p>Assistant Professor | Data Science | GIS | Machine Learning</p>
-</header>
-
 <div class="container">
 
-<div class="section contact">
-<h2>Contact</h2>
-<p><b>Address:</b> Pokhara-16, Nepal</p>
-<p><b>Email:</b> im.bidur@gmail.com</p>
-<p><b>Phone:</b> +977 9856066658</p>
-<p><b>GitHub:</b> https://github.com/bidur</p>
-<p><b>Google Scholar:</b> https://scholar.google.com/citations?user=SG4jtHQAAAAJ</p>
+<!-- LEFT SIDEBAR -->
+<div class="sidebar">
+    <h1>Bidur Devkota</h1>
+    <p><b>Assistant Professor</b></p>
+
+    <hr>
+
+    <p><b>Email:</b><br>im.bidur@gmail.com</p>
+    <p><b>Phone:</b><br>+977 9856066658</p>
+    <p><b>Address:</b><br>Pokhara, Nepal</p>
+
+    <hr>
+
+    <p><b>Links</b></p>
+    <p><a href="https://github.com/bidur">GitHub</a></p>
+    <p><a href="https://scholar.google.com/citations?user=SG4jtHQAAAAJ">Google Scholar</a></p>
+
+    <hr>
+
+    <p><b>Skills</b></p>
+    <ul>
+        <li>Python, R, Java</li>
+        <li>Machine Learning</li>
+        <li>GIS & Remote Sensing</li>
+        <li>QGIS, ArcGIS, GEE</li>
+        <li>Data Science</li>
+    </ul>
+</div>
+
+<!-- RIGHT CONTENT -->
+<div class="content">
+
+<div class="section">
+<h2>Profile</h2>
+<p>
+Doctor of Engineering specializing in GIS, Machine Learning, and Tourism Analytics. 
+Experienced academic and researcher with strong background in geospatial data science and AI.
+</p>
 </div>
 
 <div class="section">
 <h2>Education</h2>
 <ul>
-<li><b>Doctor of Engineering (ICT)</b> – Asian Institute of Technology, Thailand (2016–2020)</li>
-<li><b>Master of Engineering (ICT)</b> – Asian Institute of Technology (2010–2012)</li>
-<li><b>Bachelor of Engineering (Software)</b> – Pokhara University (2002–2006)</li>
+<li><b>Doctor of Engineering (ICT)</b>, Asian Institute of Technology (2016–2020)</li>
+<li><b>Master of Engineering (ICT)</b>, Asian Institute of Technology (2010–2012)</li>
+<li><b>Bachelor of Engineering</b>, Pokhara University (2002–2006)</li>
 </ul>
 </div>
 
 <div class="section">
-<h2>Expertise</h2>
+<h2>Experience</h2>
 <ul>
-<li>Python, R, C, Java</li>
-<li>Machine Learning, Data Science</li>
-<li>GIS: ArcGIS, QGIS, Google Earth Engine</li>
-<li>Tools: Tableau, JupyterLab, LaTeX</li>
-<li>OS: Linux, Mac, Windows</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Work Experience</h2>
-<ul>
-<li><b>Assistant Professor & Masters Coordinator</b>, GCES, Pokhara (2022–Present)</li>
-<li><b>CEO</b>, Butea Tech Solutions Pvt. Ltd. (2021–Present)</li>
+<li><b>Assistant Professor & Masters Coordinator</b>, GCES (2022–Present)</li>
+<li><b>CEO</b>, Butea Tech Solutions (2021–Present)</li>
 <li><b>Assistant Professor</b>, Tribhuvan University (2021–2023)</li>
 <li><b>Project Assistant</b>, GLODAL Inc., Japan (2021–2022)</li>
 <li><b>Assistant Professor</b>, Gandaki University (2021)</li>
@@ -100,19 +130,21 @@ ul {
 </div>
 
 <div class="section">
-<h2>Internship</h2>
-<p>National Institute of Advanced Industrial Science & Technology, Japan (2018)</p>
-<p>Worked on ML, Text Mining, and Social Media Analysis</p>
+<h2>Research & Publications</h2>
+<ul>
+<li>PM2.5 estimation using ML and satellite data (IEEE)</li>
+<li>Tourism area identification using remote sensing</li>
+<li>Social media mining for tourism analytics</li>
+<li>Adversarial patches for segmentation (arXiv)</li>
+</ul>
 </div>
 
 <div class="section">
-<h2>Publications (Selected)</h2>
-<ul>
-<li>Predicting Mass Balance of Glaciers using ML (2025)</li>
-<li>PM2.5 Estimation using Satellite Data (IEEE)</li>
-<li>Tourism Area Identification using Remote Sensing</li>
-<li>Social Media Analysis for Tourism</li>
-</ul>
+<h2>Internship</h2>
+<p>
+National Institute of Advanced Industrial Science & Technology (Japan, 2018)  
+Worked on Machine Learning, Text Mining, and Social Media Analysis.
+</p>
 </div>
 
 <div class="section">
@@ -125,18 +157,24 @@ ul {
 </div>
 
 <div class="section">
-<h2>Research Interests</h2>
+<h2>Research Supervision</h2>
+<p>Supervised research on:</p>
 <ul>
-<li>Machine Learning</li>
-<li>Geospatial Data Science</li>
-<li>Tourism Analytics</li>
-<li>Remote Sensing</li>
+<li>Tourism analytics using NLP</li>
+<li>Landslide prediction using ML</li>
+<li>Air pollution modeling (PM2.5)</li>
+<li>Deep learning in healthcare</li>
 </ul>
 </div>
 
 <div class="section">
-<h2>References</h2>
-<p>Available upon request</p>
+<h2>Editorial & Review</h2>
+<ul>
+<li>Editor – Journal of Engineering and Sciences</li>
+<li>Reviewer – Springer, MDPI, NepJOL</li>
+</ul>
+</div>
+
 </div>
 
 </div>
