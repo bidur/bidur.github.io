@@ -1,141 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bidur Devkota - CV</title>
-
-<style>
-body { margin:0; font-family:Arial; }
-.container { display:flex; }
-
-/* Sidebar */
-.sidebar {
-    width:28%;
-    background:#2c3e50;
-    color:white;
-    padding:30px;
-    position:fixed;
-    height:100%;
-}
-
-.profile-pic {
-    width:120px;
-    height:150px;
-    background:#ccc;
-    margin-bottom:15px;
-    border-radius:5px;
-    /* Replace below */
-    /* background-image:url('photo.jpg'); background-size:cover; */
-}
-
-/* Content */
-.content {
-    margin-left:28%;
-    padding:30px;
-    width:72%;
-}
-
-.section { margin-bottom:25px; }
-.section h2 {
-    border-bottom:2px solid #3498db;
-}
-
-/* Links */
-a { color:#1abc9c; text-decoration:none; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bidur Devkota - Curriculum Vitae</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f3f5f7;
+      color: #1f2933;
+      line-height: 1.55;
+    }
+    .cv-container {
+      max-width: 1250px;
+      margin: 24px auto;
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      min-height: calc(100vh - 48px);
+    }
+    .sidebar {
+      background: #243447;
+      color: #f5f7fa;
+      padding: 34px 28px;
+    }
+    .main {
+      padding: 34px 36px;
+    }
+    .photo-box {
+      width: 118px;
+      height: 148px;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-radius: 10px;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #dfe7ef, #b8c7d6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #41576d;
+      font-size: 0.92rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    h1 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .title {
+      font-size: 1.05rem;
+      color: #dce7f2;
+      margin-bottom: 22px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 1.28rem;
+      font-weight: 750;
+      color: #243447;
+      border-bottom: 2px solid #3d8bfd;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+    .sidebar .section-title {
+      color: #fff;
+      border-bottom-color: #69a7ff;
+    }
+    .contact-item, .link-item {
+      margin: 12px 0;
+      font-size: 0.96rem;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .contact-item i, .link-item i {
+      width: 24px;
+      margin-right: 10px;
+      opacity: 0.92;
+    }
+    .sidebar a {
+      color: #eef6ff;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255,255,255,0.4);
+    }
+    .sidebar a:hover, a:hover { text-decoration: none; border-bottom-style: solid; }
+    .skills-list, .bullet-list, .pub-list {
+      padding-left: 20px;
+    }
+    .skills-list li, .bullet-list li, .pub-list li {
+      margin-bottom: 8px;
+    }
+    .entry {
+      margin-bottom: 22px;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .entry-title {
+      font-weight: 700;
+      font-size: 1.03rem;
+      color: #192633;
+    }
+    .entry-date {
+      white-space: nowrap;
+      color: #4f5e6d;
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+    .entry-place {
+      display: block;
+      color: #425466;
+      font-style: italic;
+      margin: 4px 0 8px;
+    }
+    .subtle {
+      color: #52606d;
+    }
+    p { margin: 6px 0; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .small-note {
+      font-size: 0.9rem;
+      color: #617182;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: #425466;
+    }
+    .top-intro {
+      margin-bottom: 28px;
+    }
+    .main a {
+      color: #1769d6;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(23,105,214,0.35);
+    }
+    @media (max-width: 980px) {
+      .cv-container { grid-template-columns: 1fr; }
+      .sidebar, .main { padding: 28px 22px; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
+<div class="cv-container">
+  <aside class="sidebar">
+    <div class="photo-box" aria-label="Profile photo placeholder">
+      <!-- Replace with your image like this:
+      <img src="bidur-photo.jpg" alt="Bidur Devkota profile photo">
+      -->
+      PP Size<br>Photo
+    </div>
 
-<div class="container">
+    <h1>Bidur Devkota</h1>
+    <div class="title">Assistant Professor · Researcher · Data Science & GIS</div>
 
-<!-- LEFT -->
-<div class="sidebar">
+    <div class="section">
+      <div class="section-title">Contact</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i><span id="email"></span></div>
+      <div class="contact-item"><i class="fas fa-phone"></i><span id="phone"></span></div>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i>Nityananda Marga, Pokhara-16 (Postal/Zip code: 33700), Gandaki Province, Nepal</div>
+      <div class="contact-item"><i class="fas fa-flag"></i>Nepalese</div>
+      <div class="contact-item"><i class="fas fa-user"></i>Male</div>
+    </div>
 
-<div class="profile-pic"></div>
+    <div class="section">
+      <div class="section-title">Links</div>
+      <div class="link-item"><i class="fab fa-github"></i><a href="https://github.com/bidur" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="link-item"><i class="fas fa-graduation-cap"></i><a href="https://scholar.google.com/citations?user=SG4jtHQAAAAJ" target="_blank" rel="noopener">Google Scholar</a></div>
+      <div class="link-item"><i class="fab fa-researchgate"></i><a href="https://www.researchgate.net/profile/Bidur-Devkota?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a></div>
+    </div>
 
-<h1>Bidur Devkota</h1>
-<p>Assistant Professor</p>
+    <div class="section">
+      <div class="section-title">Expertise</div>
+      <ul class="skills-list">
+        <li>Programming Languages & Platforms: Python, R, C, Java, Google Earth Engine, WebGIS, Machine Learning, Data Science, ArcGIS, QGIS, RStudio, Tableau, JupyterLab, LaTeX</li>
+        <li>Operating Systems: Mac, Linux and Windows</li>
+      </ul>
+      <div class="small-note">Other private repositories are hidden on GitHub.</div>
+    </div>
+  </aside>
 
-<hr>
+  <main class="main">
+    <section class="top-intro">
+      <div class="section-title">Profile</div>
+      <p class="tagline">Doctor of Engineering in Information and Communication Technologies with experience in data science, machine learning, geospatial analytics, remote sensing, social media mining, WebGIS, and academic program coordination.</p>
+    </section>
 
-<p><b>Email:</b> <span id="email"></span></p>
-<p><b>Phone:</b> <span id="phone"></span></p>
+    <section class="section">
+      <div class="section-title">Education and Training</div>
 
-<hr>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Doctor of Engineering, Department of Information and Communication Technologies (ICT)</span>
+          <span class="entry-date">August 2016 – July 2020</span>
+        </div>
+        <span class="entry-place">Asian Institute of Technology, Thailand</span>
+        <p><strong>Research:</strong> A Study on Tourism Monitoring using Social Media and Nighttime Light Remote Sensing Data</p>
+        <p class="subtle">This work focuses on extracting crowdsourced data from online sources like Twitter, Flickr and OpenStreetMap as well as remote sensing data and analyze them to identify and describe tourism areas (study area: Nepal). Data analysis is done using state-of-the-art spatial clustering and text mining algorithms like DBSCAN, TFIDF, etc. Open-source tools like Python and QGIS are used for extracting and analyzing the data.</p>
+      </div>
 
-<p><b>Links</b></p>
-<p><a href="https://github.com/bidur">GitHub</a></p>
-<p><a href="https://scholar.google.com/citations?user=SG4jtHQAAAAJ">Google Scholar</a></p>
-<p><a href="https://www.researchgate.net/profile/Bidur-Devkota">ResearchGate</a></p>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Master of Engineering, Department of Information and Communication Technologies (ICT)</span>
+          <span class="entry-date">August 2010 – June 2012</span>
+        </div>
+        <span class="entry-place">Asian Institute of Technology, Thailand</span>
+        <p><strong>Thesis:</strong> Directed Accident Information Dissemination in Vehicular Ad-hoc Network</p>
+        <p class="subtle">This work proposes an approach for disseminating alert messages among vehicles on the road, for city and highway conditions, in a directional manner so as to ensure safe and improved road experience.</p>
+      </div>
 
-<hr>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Bachelors of Engineering (Computer Software Engineering)</span>
+          <span class="entry-date">August 2002 – September 2006</span>
+        </div>
+        <span class="entry-place">Gandaki College of Engineering and Science, Pokhara University, Nepal</span>
+      </div>
+    </section>
 
-<p><b>Skills</b></p>
-<ul>
-<li>Python, R, Java</li>
-<li>Machine Learning</li>
-<li>GIS, Remote Sensing</li>
-<li>QGIS, ArcGIS</li>
-</ul>
+    <section class="section">
+      <div class="section-title">Internship</div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">National Institute of Advanced Industrial Science & Technology, Data Platform Research Team</span>
+          <span class="entry-date">May 2018 – August 2018</span>
+        </div>
+        <span class="entry-place">Tokyo, Japan</span>
+        <p><strong>Research Area:</strong> Machine Learning, Text Mining, Social Media Mining</p>
+        <p class="subtle">This work focuses on extracting hotel review data from travel portals like TripAdvisor to identify important hotel aspects and their weight so as to rank the hotels based on the discovered aspects and their rank. State-of-the-art algorithms like Latent Dirichlet Allocation and Word2Vec were used for the purpose.</p>
+        <p class="subtle">Python programming language is used for extracting and analysing the data.</p>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section-title">Work Experience</div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Assistant Professor and Masters Program Coordinator</span>
+          <span class="entry-date">June 2022 – Present</span>
+        </div>
+        <span class="entry-place">Gandaki College of Engineering and Science, Pokhara University, Nepal</span>
+        <p>Responsibilities: Masters Coordinator, Teaching courses (Programming languages, GIS, Software Engineering), Conducting Labs, Thesis and Project Supervision.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">CEO</span>
+          <span class="entry-date">July 2021 – Present</span>
+        </div>
+        <span class="entry-place">Butea Tech Solutions Pvt. Ltd., Pokhara, Nepal</span>
+        <p>Responsibilities: Focus on Data Science related projects such as developing a program for analyzing traffic data in Bangkok using people mobility, Nighttime light Data Analysis, etc.</p>
+        <p>Programming languages and Tools used: Python, QGIS, GDAL, etc.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Assistant Professor</span>
+          <span class="entry-date">14 December 2021 – 13 April 2023</span>
+        </div>
+        <span class="entry-place">Electronics and Computer Department, Pashchimanchal Campus, Tribhuvan University, Pokhara, Nepal</span>
+        <p>Responsibilities: Teaching courses (Programming languages, Project Management, Application of Machine Learning and Data Science for Geomatics), Conducting Labs, Thesis and Project Supervision.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Project Assistant (Part time)</span>
+          <span class="entry-date">March 2021 – Feb 2022</span>
+        </div>
+        <span class="entry-place">GLODAL inc, Japan</span>
+        <p>Responsibilities: Worked on Machine Learning and Data Science related projects (Social Media Analysis, Machine Learning and Geospatial Big Data).</p>
+        <p>Programming languages and Tools used: Python, QGIS, GDAL, etc.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Assistant Professor and BIT Program Coordinator</span>
+          <span class="entry-date">31 May 2021 – 2 Dec 2021</span>
+        </div>
+        <span class="entry-place">Information Technology, Gandaki University, Pokhara, Nepal</span>
+        <p>Responsibilities: Teaching courses, Conducting Labs, Coordinate the curriculum design for the Bachelor of Information Technology Degree.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Freelancer working with Dr. Miyazaki’s</span>
+          <span class="entry-date">August 2020 – December 2020</span>
+        </div>
+        <span class="entry-place">University of Tokyo, Japan</span>
+        <p>Responsibilities: Machine Learning (Land Cover Mapping) and Geospatial Big Data analysis (Mobility analysis Using Probe Data).</p>
+        <p>Programming languages and Tools used: Python, QGIS, GDAL, etc.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Student Assistantship</span>
+          <span class="entry-date">July 2017 – December 2017</span>
+        </div>
+        <span class="entry-place">SERVIR-Mekong Project, Asian Institute of Technology, Thailand</span>
+        <p>Responsibilities: Web GIS interface development for the project.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Assistant Professor and MSc. Program Coordinator</span>
+          <span class="entry-date">December 2013 – July 2016</span>
+        </div>
+        <span class="entry-place">Electronics and Computer Department, Pashchimanchal Campus, Tribhuvan University, Pokhara, Nepal</span>
+        <p>Responsibilities: Teaching courses, Conducting Labs, Supervision of Projects, working on the curriculum design, Program Coordinator (October 2015 – July 2016).</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Lecturer, Software Engineering</span>
+          <span class="entry-date">May 2013 – December 2013</span>
+        </div>
+        <span class="entry-place">Gandaki College of Engineering and Science, Pokhara University, Pokhara, Nepal</span>
+        <p>Responsibilities: Teaching courses, Conducting Labs, Supervision of Projects, Master Program Curriculum Design.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Research Associate</span>
+          <span class="entry-date">July 2012 – April 2013</span>
+        </div>
+        <span class="entry-place">intERLab, Asian Institute of Technology, Thailand</span>
+        <p>Responsibilities: For the research project, DUMBO, design and implement the router selection algorithm in an ad-hoc network. This project is intended for disaster recovery scenarios for availing emergency communications.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Student Assistantship</span>
+          <span class="entry-date">February 2012 – March 2012</span>
+        </div>
+        <span class="entry-place">Student Union- Campus and Environment, Asian Institute of Technology, Thailand</span>
+        <p>Responsibilities: Setting Up and inspecting LAN cabling inside Campus.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Student Assistantship</span>
+          <span class="entry-date">August 2011 – September 2011</span>
+        </div>
+        <span class="entry-place">Media and Communications Unit, Asian Institute of Technology, Thailand</span>
+        <p>Responsibilities: Investigation of Web Design and Web Branding of AIT website.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Software Programmer</span>
+          <span class="entry-date">October 2007 – January 2010</span>
+        </div>
+        <span class="entry-place">Sustainable Solutions, Nepal</span>
+        <p>Responsibilities: Worked as a development team member for the development of a web-based Personnel Management System and a web-based Hospital Information System. Also worked as a support member for other software of the company.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Lecturer, Software Engineering</span>
+          <span class="entry-date">January 2010 – August 2010 (Full Time); January 2007 – January 2010 (part Time)</span>
+        </div>
+        <span class="entry-place">Gandaki College of Engineering and Science, Pokhara University, Nepal</span>
+        <p>Responsibilities: Teaching courses, Conducting Labs, Supervision of Projects.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Editorial and Review Activities</div>
+      <ul class="bullet-list">
+        <li><strong>Editor:</strong> Journal of Engineering and Sciences, Pashchimanchal Campus, Tribhuvan University, Pokhara, Nepal</li>
+        <li><strong>Reviewer:</strong> Springer Nature, NepJol and MDPI Journals</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Awards</div>
+      <ul class="bullet-list">
+        <li>Fellowship for Second Nepal Winter School in AI, Organized by Nepal Applied Mathematics and Informatics Institute for Research (NAAMII), 10-20 December, 2019, Pokhara, Nepal</li>
+        <li>Financial support for participation in International Training Workshop on BeiDou Technology and Its Applications in the Belt and Road Countries and Regions, Organized by China Satellite Navigation Office Academic Exchange Center, 16-29 September, 2019</li>
+        <li>Financial support by National Institute of Advanced Industrial Science and Technology, Japan for participation in The 6th IEEE International Conference on Big Data and Smart Computing, 27 February - 2 March, 2019, Kyoto, Japan</li>
+        <li>Japanese Government Scholarship to pursue Ph.D. Degree at Asian Institute of Technology, Thailand, August 2016</li>
+        <li>Best Paper Award - “Machine Aided Back of the Book Indexing” (NaSCoIT Conference 2013)</li>
+        <li>Asian Institute of Technology Fellowship to pursue Master’s Degree in Information Management, Thailand, August 2010</li>
+        <li>Gandaki College of Engineering and Science - Semester topper Awards during Bachelors of Software Engineering, Nepal</li>
+        <li>First Prize - Secondary Level Science Exhibition, PABSON, Nepal</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Graduate Students Research Supervision</div>
+      <div class="entry">
+        <div class="entry-title">Ongoing</div>
+        <ul class="bullet-list">
+          <li>Adhikari, A., Leveraging NLP and Clustering Techniques to Analyze Tourist Destination Attributes from Online Reviews: A Case Study of Nepal’s Top 100 Destinations.</li>
+          <li>Bhandari, U., To identify the tourism functional areas of a place using social media data.</li>
+          <li>Gautam, U., Using Machine Learning Ensemble Models for Temporal Landslide Forecasting in Nepal.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Completed</div>
+        <ul class="bullet-list">
+          <li>Gurung, S., Predicting Mass Balance of Glaciers in the Central Himalaya Region using Machine Learning.</li>
+          <li>Thapa, I., Applying machine learning algorithms to estimate PM 2.5 using satellite data and metrological data.</li>
+          <li>Parajuli, B., Aspect Based Sentiment Analysis on Nepali Language Tweets related to COVID-19.</li>
+          <li>Giri, B., Explainable Prediction of Fruits Using Deep Learning and Explainable AI.</li>
+          <li>Padel, S. B., Multi-Class Credit Risk Analysis Using Deep Learning.</li>
+          <li>Paudel, S., Personality Analysis On Social Media Data Using Transformer Model.</li>
+          <li>Poudel, Z., Applying Deep Learning to Identify Schizophrenia using Structural MRI.</li>
+          <li>Gurung. S., Explaining the Categorical Features of Breast Cancer Prediction Using Explainable AI and Support Vector Machine.</li>
+          <li>Poudel, A., Varietal Identification of Rice Seed Using Deep Convolutional Neural Network.</li>
+          <li>Subedi, G., COVID-19 Detection from Chest X-RAY Images Using Ensemble of Deep Learning Algorithms.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Publications</div>
+      <ol class="pub-list">
+        <li>Gurung, S., Devkota, B., Adhikari, R., &amp; Adhikari, R. (2025). Predicting Mass Balance of Glaciers in the Central Himalaya Region using Machine Learning. <em>Journal of Engineering and Sciences</em>, 4(2), 171-186.</li>
+        <li>Thapa, I., Devkota, B., Lamichhane, B. R., Devkota, B. P., Dhakal, R., &amp; Horanont, T. (2025). Applying Deep Learning and Machine Learning Algorithms to Estimate PM<sub>2.5</sub> Concentration Using Satellite Data and Meteorological Data. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>.</li>
+        <li>Shekhar, P., Devkota, B., Samaraweera, D., Kandel, L. N., &amp; Babu, M. (2025). Cross-Model Transferability of Adversarial Patches in Real-time Segmentation for Autonomous Driving. <em>arXiv preprint</em> arXiv:2502.16012.</li>
+        <li>Thapa, I., &amp; Devkota, B. (2024). Applying machine learning algorithms to estimate PM 2.5 using satellite data and metrological data. <em>Journal of Engineering and Sciences</em>, 3(1), 74-80.</li>
+        <li>Lahagun, P., Devkota, B., Giri, S., &amp; Budha, P. (2024). Machine Learning-Based Social Media Review Analysis for Recommending Tourist Spots. <em>Journal of Engineering and Sciences</em>, 3(1), 45-52.</li>
+        <li>Paudel, S. B., Devkota, B., &amp; Timilsina, S. (2023). Multi-Class Credit Risk Analysis Using Deep Learning. <em>Journal of Engineering and Sciences</em>, 2(1), 82–87. <a href="https://doi.org/10.3126/jes2.v2i1.60399" target="_blank" rel="noopener">DOI</a></li>
+        <li>Parajuli, B., Devkota, B., &amp; Tamrakar, S. (2023, December). Aspect Based Sentiment Analysis on Nepali Language Tweets related to COVID-19. In <em>International Research Symposium, University of Vocational Technology, Sri Lanka</em>, 221-227.</li>
+        <li>Devkota, B., &amp; Miyazaki, H. (2023). Social Media Reactions to COVID-19 and Its Countermeasures. <em>Rethinking Cities for Resilience and Growth in the Post-COVID-19 World</em>.</li>
+        <li>Poudel, A., &amp; Devkota, B. (2022). Varietal Identification of Rice Seed Using Deep Convolutional Neural Network. <em>Journal of Engineering and Sciences</em>, 1(1), 57–61. <a href="https://doi.org/10.3126/jes2.v1i1.58428" target="_blank" rel="noopener">DOI</a></li>
+        <li>Poudel, B., Devkota, B., &amp; Lamichhane, N. (2022). Automatic Identification of Nepalese Tourism Related Tweets using Machine Learning Algorithms. <em>Journal of Engineering and Sciences</em>, 1(1), 37–45. <a href="https://doi.org/10.3126/jes2.v1i1.58398" target="_blank" rel="noopener">DOI</a></li>
+        <li>Subedi, G., &amp; Devkota, B. (2022). COVID-19 Detection from Chest X-RAY Images Using Ensemble of Deep Learning Algorithms. <em>Journal of Engineering and Sciences</em>, 1(1), 106–111. <a href="https://doi.org/10.3126/jes2.v1i1.58456" target="_blank" rel="noopener">DOI</a></li>
+        <li>Devkota, B., &amp; Miyazaki, H. (2020). CSIS Days 2020 - Research Presentation on Spatial Information Science, 20–21 November 2020, University of Tokyo, Japan.</li>
+        <li>Devkota, B., Miyazaki, H., &amp; Pahari, N. (2019, December). Utilizing user generated contents to describe tourism areas of interest. In <em>2019 First International Conference on Smart Technology &amp; Urban Development (STUD)</em> (pp. 1-6). IEEE.</li>
+        <li>Devkota, B., Miyazaki, H., Witayangkurn, A., &amp; Kim, S. M. (2019). Using volunteered geographic information and nighttime light remote sensing data to identify tourism areas of interest. <em>Sustainability</em>, 11(17), 4718.</li>
+        <li>Devkota, B., Kim, K. S., Zhuang, C., &amp; Miyazaki, H. (2019, February). Disaggregate Hotel Evaluation by Using Diverse Aspects from User Reviews. In <em>2019 IEEE International Conference on Big Data and Smart Computing (BigComp)</em> (pp. 1-8). IEEE.</li>
+        <li>Devkota, B., &amp; Miyazaki, H. (2018, October). An exploratory study on the generation and distribution of geotagged tweets in Nepal. In <em>2018 IEEE 3rd International Conference on Computing, Communication and Security (ICCCS)</em> (pp. 70-76). IEEE.</li>
+        <li>Devkota, B., &amp; Miyazaki, H. (2017, February). Development of Social Media Data Collection System and its Preliminary Analysis. In <em>International Conference for Urban Geoinfomatics</em>, TERI University.</li>
+        <li>Devkota, B., Adhikar, B., &amp; Shrestha, D. (2015, December). Integrating romanized Nepali spellchecker with SMS based decision support system for Nepalese farmers. In <em>2015 9th International Conference on Software, Knowledge, Information Management and Applications (SKIMA)</em> (pp. 1-6). IEEE.</li>
+        <li>Shrestha, D., Devkota, B., &amp; Jeong, S. R. (2015, December). Challenges and Factors affecting E-Governance practices in Nepal. In <em>9th International Conference on Software, Knowledge, Information Management and Applications (SKIMA)</em>, Kathmandu, Nepal.</li>
+        <li>Acharya, H. S., Adhikari, B., Bhujel, A., &amp; Devkota, B. (2013, September). Machine Aided Back of the Book Indexing. In <em>Seventh National Students’ Conference on Information (NaSCoIT 2013)</em>, Kathmandu, Nepal.</li>
+        <li>Mekbungwan, P., Devkota, B., Gurung, S., Tunpan, A., &amp; Kanchanasut, K. (2013, November). Network coding based bulk data synchronization in mobile ad hoc networks. In <em>Proceedings of the 9th Asian Internet Engineering Conference</em> (pp. 17-24). <a href="https://doi.org/10.1145/2534142.2534145" target="_blank" rel="noopener">DOI</a></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Book</div>
+      <ul class="bullet-list">
+        <li><em>Java Programming Basic</em>, 2016, ISBN: 993788818-2, M.K. Publishers &amp; Distributors, Kathmandu, Nepal</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Trainings Attended</div>
+      <ul class="bullet-list">
+        <li>Second Nepal Winter School in AI, Organized by Nepal Applied Mathematics and Informatics Institute for Research (NAAMII), 10-20 December, 2019, Pokhara, Nepal</li>
+        <li>International Training Workshop on BeiDou Technology and Its Applications in the Belt and Road Countries and Regions, Organized by China Satellite Navigation Office Academic Exchange Center, 16-29 September, 2019</li>
+        <li>8th Joint Student Seminar on Civil Infrastructures, organized by RNUS-SET, Asian Institute of Technology and ICUS-IIS, University of Tokyo on 12 - 13 September 2019</li>
+        <li>Training on Global Navigation Satellite System (GNSS) Jointly Organized by GIC/AIT, CSIS/UT and ICG/UNOOSA (Bangkok, Thailand, 14 - 18 January 2019)</li>
+        <li>Workshop on Research Methodology (29 May 2015) by Gandaki College of Engineering and Science, Pokhara, Nepal</li>
+        <li>Workshop on Research Methodology (16-18 March 2015) by Office of Rector, Research Division, Tribhuvan University, Nepal</li>
+        <li>Skill Test Assessor's Training (22-24 Feb 2015) by National Skill Testing Board, CTEVT, Nepal</li>
+        <li>22nd Asian School on Computer Science on Performance Evaluation for Computer Networks by Professor Don Towsley from University of Massachusetts and Professor John C.S. Lui from Chinese University of Hongkong (20-21 Feb 2012)</li>
+        <li>3 Hours (3rd Feb 2012) Introductory tutorial for ROS (Robot Operating System) in Bangkok University, Thailand</li>
+        <li>3 Days (27-29 July 2011) workshop on DNS/DNSSEC by APNIC (Asia Pacific Network Information Centre) in Interlab (Internet Education and Research Laboratory), Asian Institute of Technology, Thailand</li>
+        <li>12 Hours (9-12 Jun 2011) lecture series on Wireless Sensor Networks by Associate Professor Dr. Shirshu Varma from Indian Institute of Technology, India</li>
+        <li>SANOG XII (6-14 Aug 2008) Workshops on Routing, IPv6 Deployment and Applications, Multicast Design and Deployment Workshop, VOIP Design and Deployment, Tutorials for IPv4, IPv6, Network Operations, Routing, Security, etc.</li>
+      </ul>
+    </section>
+  </main>
 </div>
 
-<!-- RIGHT -->
-<div class="content">
-
-<div class="section">
-<h2>Education</h2>
-<ul>
-<li>PhD, Asian Institute of Technology (2016–2020)</li>
-<li>MEng, AIT (2010–2012)</li>
-<li>BE, Pokhara University</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Experience</h2>
-<ul>
-<li>Assistant Professor, GCES</li>
-<li>CEO, Butea Tech</li>
-<li>Assistant Professor, TU</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Graduate Students Supervision</h2>
-<ul>
-<li>Glacier Mass Balance Prediction</li>
-<li>PM2.5 Estimation</li>
-<li>Tourism NLP Analysis</li>
-<li>Landslide Prediction</li>
-<li>Deep Learning Healthcare</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Publications</h2>
-<ul>
-<li>PM2.5 Estimation (IEEE)</li>
-<li>Tourism Analysis using ML</li>
-<li>Adversarial Patches (arXiv)</li>
-<li>Social Media Mining</li>
-</ul>
-</div>
-
-</div>
-
-</div>
-
-<!-- Anti-spam JS -->
 <script>
-document.getElementById("email").innerHTML =
-"im." + "bidur" + "@gmail.com";
+  (function() {
+    const emailUser = 'im.bidur';
+    const emailDomain = 'gmail.com';
+    const phoneParts = ['+977', '985', '6066658'];
 
-document.getElementById("phone").innerHTML =
-"+977 " + "985" + "6066658";
+    const emailTarget = document.getElementById('email');
+    const phoneTarget = document.getElementById('phone');
+
+    const emailLink = document.createElement('a');
+    emailLink.href = 'mailto:' + emailUser + '@' + emailDomain;
+    emailLink.textContent = emailUser + '@' + emailDomain;
+    emailTarget.appendChild(emailLink);
+
+    const phoneLink = document.createElement('a');
+    phoneLink.href = 'tel:' + phoneParts.join('');
+    phoneLink.textContent = phoneParts.join(' ');
+    phoneTarget.appendChild(phoneLink);
+  })();
 </script>
-
 </body>
 </html>
