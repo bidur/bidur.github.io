@@ -499,10 +499,13 @@
   </main>
 </div>
 
-<script>
+<!-- <script>
   (function() {
     const emailUser = 'im.bidur';
     const emailDomain = 'gmail.com';
+    var e = "im.bidur@gmail.com";
+    document.write(e.replace("@", " [at] "));
+    
     const phoneParts = ['+977', '985', '6066658'];
 
     const emailTarget = document.getElementById('email');
@@ -518,6 +521,34 @@
     phoneLink.textContent = phoneParts.join(' ');
     phoneTarget.appendChild(phoneLink);
   })();
+</script> -->
+  <script>
+(function() {
+    // Phone (safe)
+    const phoneParts = ['+977', '985', '6066658'];
+    const phoneTarget = document.getElementById('phone');
+
+    const phoneLink = document.createElement('a');
+    phoneLink.href = 'tel:' + phoneParts.join('');
+    phoneLink.textContent = phoneParts.join(' ');
+    phoneTarget.appendChild(phoneLink);
+
+    // Email as image (anti-scraping)
+    const emailTarget = document.getElementById('email');
+
+    const emailImg = document.createElement('img');
+    emailImg.src = 'email.png';   // make sure this file exists
+    emailImg.alt = 'Email address';
+    emailImg.style.height = '18px';
+    emailImg.style.verticalAlign = 'middle';
+
+    // Optional: make image clickable
+    const emailLink = document.createElement('a');
+    emailLink.href = 'mailto:im.bidur@gmail.com';
+    emailLink.appendChild(emailImg);
+
+    emailTarget.appendChild(emailLink);
+})();
 </script>
 </body>
 </html>
